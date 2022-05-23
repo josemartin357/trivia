@@ -2,6 +2,7 @@
 // Added a class for all the wrong answers and added ID for right answer
 // Added id for p tag that will display message if right or wrong answer
 
+// Funtion for multiple choice display
 document.addEventListener("DOMContentLoaded", function () {
   // grabbing correct answer id
   let correctChoice = document.querySelector("#correctAnswer");
@@ -28,4 +29,30 @@ document.addEventListener("DOMContentLoaded", function () {
       result.innerHTML = "Wrong answer! Better luck next time!";
     });
   }
+});
+
+// Logic for free response. We use query selector to listen for click on submit button and grab the value of the input to check if response corrent or wrong
+// we use the id in p tag and query selector to edit innerHTML
+document.addEventListener("DOMContentLoaded", function () {
+  // query selectors for submit button, input and p tag
+  let responseButton = document.querySelector("#responseButton");
+  let responseInput = document.querySelector("#responseInput");
+  let freeQuestionResult = document.querySelector("#freeQuestionResult");
+
+  // CORRECT ANSWER LOGIC
+  // function listens for click in responseButton
+  responseButton.addEventListener("click", function () {
+    // we convert value of input to lowercase and compare with "switzerland"
+    if (responseInput.value.toLowerCase() === "switzerland") {
+      // if correct, we display right answer in p tag and change input background color to green
+      freeQuestionResult.innerHTML = "Right answer!";
+      responseInput.style.backgroundColor = "green";
+    }
+    // INCORRECT ANSWER LOGIC
+    else {
+      // else we display wrong answer in p tag and change input background color to red
+      freeQuestionResult.innerHTML = "Wrong! Good luck next time.";
+      responseInput.style.backgroundColor = "red";
+    }
+  });
 });
