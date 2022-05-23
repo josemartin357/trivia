@@ -8,9 +8,7 @@
     />
     <link href="styles.css" rel="stylesheet" />
     <title>Trivia!</title>
-    <script>
-      // pending: need to add js script
-    </script>
+    <script src="trivia.js"></script>
   </head>
   <body>
     <div class="header">
@@ -21,13 +19,26 @@
       <div class="section">
         <h2>Part 1: Multiple Choice</h2>
         <hr />
-        <!-- pending: need multiple choice question here -->
+        <h3>
+          What is the approximate ratio of people to sheep in New Zealand?
+        </h3>
+        <p id="returnResult"></p>
+        <button id="correctAnswer">6 people per 1 sheep</button>
+        <button class="wrongAnswer">3 people per 1 sheep</button>
+        <button class="wrongAnswer">1 people per 1 sheep</button>
+        <button class="wrongAnswer">1 person per 3 sheep</button>
+        <button class="wrongAnswer">1 person per 6 sheep</button>
       </div>
 
       <div class="section">
         <h2>Part 2: Free Response</h2>
         <hr />
-        <!-- pending: need free response question here -->
+        <h3>
+          In which country is it illegal to own only one guinea pig, as a lone
+          guinea pig might get lonely?
+        </h3>
+        <input type="text" placeholder="Input Answer" />
+        <input type="submit" value="Submit" />
       </div>
     </div>
   </body>
